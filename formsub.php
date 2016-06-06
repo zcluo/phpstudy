@@ -10,12 +10,21 @@
 $name = $email = $gender = $comment = $website = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = test_input($_POST["name"]);
-    $email = test_input($_POST["email"]);
-    $website = test_input($_POST["website"]);
-    $comment = test_input($_POST["comment"]);
-    $gender = test_input($_POST["gender"]);
+
+    $param =  file_get_contents("php://input");
+
+    parse_str($param,$ar);
+
+  
+
+    $name = test_input($ar["name"]);
+    $email = test_input($ar["email"]);
+    $website = test_input($ar["website"]);
+    $comment = test_input($ar["comment"]);
+    $gender = test_input($ar["gender"]);
 }
+
+
 
 function test_input($data) {
     $data = trim($data);
