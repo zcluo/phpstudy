@@ -51,8 +51,29 @@ echo strpos("Hello world!","world");
 echo "<br/>";
 define("GREETING","Welcome to W3School.com.cn!");
 echo GREETING;
-
-
+$t = date("H");
+if($t<"20")
+{
+    echo "Have a good day!"."<br/>";
+}
+else {
+    echo "Have a good night!"."<br/>";
+}
+$age = array("Peter"=>"35","Ben"=>"37","Joe"=>"43");
+foreach($age as $k=>$v){
+    echo $k."=>".$v."<br/>";
+}
+echo $_SERVER['PHP_SELF'];
+echo "<br>";
+echo $_SERVER['SERVER_NAME'];
+echo "<br>";
+echo $_SERVER['HTTP_HOST'];
+echo "<br>";
+echo $_SERVER['HTTP_REFERER'];
+echo "<br>";
+echo $_SERVER['HTTP_USER_AGENT'];
+echo "<br>";
+echo $_SERVER['SCRIPT_NAME'];
 
 
 ?>
